@@ -30,14 +30,7 @@
 <?php $repertoire = array("Moteurs" => array(("Google" => ("http://www.google.fr", image)),array("Yahoo"=> array("http://www.yahoo.fr",image))), 
                           "Journaux" => array(("LeMonde" => ("http://www.lemonde.fr", image)),array("Linux"=> array("http://www.editions-diamond.fr/category/gnu-linux-magazine",image))), 
                           "Sports" => array(("FFF" => ("http://www.fff.fr", image)),array("Eurosport"=> array("http://www.eurosport.fr",image))) ?>
-<?php foreach ($data as $value) : ?>
-  <?php $imc = $value["Poids"]/(($value["Taille"]/100)*($value["Taille"]/100)); $imc=round($imc,2); if($imc > 25){ ?>
-    <tr class = "rouge">
-  <?php } ?>
-  <?php $imc = $value["Poids"]/(($value["Taille"]/100)*($value["Taille"]/100)); $imc=round($imc,2); if($imc <= 25){ ?>
-    <tr>
-  <?php } ?>
-  <?php foreach($value as $valeur) : ?>
+  <?php foreach($repertoire as $valeur) : ?>
     <td><?= htmlspecialchars($valeur) ?></td>
   <?php endforeach ?>
   </tr>
